@@ -53,17 +53,52 @@ class LinkedList:
             cur = cur.next
         self.head = dummy.next
 
+    def is_circle(self):
+        slow = self.head
+        if slow.next is not None:
+            fast = slow.next
+        else:
+            return False
+        if fast.next is None:
+            return False
+
+        while slow != fast:
+            if slow.next is not None:
+                slow = slow.next
+            else:
+                return False
+
+            for i in range(2):
+                if fast.next is not None:
+                    fast = fast.next
+                else:
+                    return False
+        return True
+
+    def get_tail(self):
+        current_node = self.head
+        prev = None
+        prevprev = None
+        i = 0
+        while current_node:
+            if i > 1:
+                prevprev = prev
+            prev = current_node
+            current_node = current_node.next
+            i += 1
+        return prev, prevprev
+
 
 if __name__ == "__main__":
     llist = LinkedList()
     llist.insertAtEnd(4)
     llist.insertAtEnd(2)
-    llist.insertAtEnd(4)
     llist.insertAtEnd(1)
-    llist.insertAtEnd(2)
-    llist.insertAtEnd(4)
-    llist.insertAtEnd(5)
-    llist.printLL()
-    print("-----remove 4------------")
-    llist.remove(4)
-    llist.printLL()
+    print(llist.is_circle())
+    # False (is not circle)
+
+    tail, prev = llist.get_tail()
+    tail.next = prev
+    prev.next = tail
+    print(llist.is_circle())
+    # True (is circle)
