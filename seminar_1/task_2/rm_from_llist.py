@@ -43,11 +43,14 @@ class LinkedList:
         prev = dummy
         cur = self.head
         while cur is not None:
+            # print(cur.data, prev.data)
             if cur.data == val:
                 next_ = cur.next
                 prev.next = next_
+                # print("удалил")
+            else:
+                prev = prev.next
             cur = cur.next
-            prev = prev.next
         self.head = dummy.next
 
 
@@ -56,7 +59,8 @@ if __name__ == "__main__":
     llist.insertAtEnd(2)
     llist.insertAtEnd(4)
     llist.insertAtEnd(1)
+    llist.insertAtEnd(2)
     llist.printLL()
-    print("-----remove 1------------")
-    llist.remove(1)
+    print("-----remove 2------------")
+    llist.remove(2)
     llist.printLL()
