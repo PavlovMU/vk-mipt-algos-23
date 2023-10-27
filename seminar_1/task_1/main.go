@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 type LinkedList struct {
-	Lst []ListNode
+	Head *ListNode
 }
 type ListNode struct {
 	Value int
