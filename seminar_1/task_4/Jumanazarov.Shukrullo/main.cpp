@@ -29,5 +29,6 @@ int main() {
 		std::cout << res[i] << " ";
 	}
 	std::cout << std::endl;
+	delete[] res;
 	return 0;
 }
