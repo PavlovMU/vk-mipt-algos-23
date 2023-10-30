@@ -12,7 +12,7 @@ type List struct {
   cap  uint
   size uint
 }
-
+ 
 func (list *List) Append(data int) bool {
     if list.size >= list.cap {
         return false 
@@ -40,7 +40,7 @@ func (list *List) Print() {
         fmt.Printf("%d -> ", cur.data)
         cur = cur.next
     }
-    fmt.Println("nil")
+    fmt.Println("nil") // last elem
 }
 
 func (list *List) reverseList() {
