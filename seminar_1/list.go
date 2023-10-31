@@ -66,13 +66,14 @@ func (list *List) deleteElem(val int) {
     cur  := list.head
 
     for cur != nil {
-      if cur.data == val {
-        prev.next = cur.next 
-      } else {
-        prev = cur
-      }
+        if cur.data == val {
+            prev.next = cur.next 
+            list.size--
+        } else {
+            prev = cur
+        }
 
-      cur = cur.next
+        cur = cur.next
     }
 
     list.head = dummy.next
