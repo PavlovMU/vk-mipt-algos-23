@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[28]:
-
 
 class Node:
     def __init__(self, data=None, nextt=None):
@@ -60,9 +58,6 @@ def ReverseList(l):
 
 
 
-
-
-# In[ ]:
 
 
 
