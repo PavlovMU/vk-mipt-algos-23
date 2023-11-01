@@ -11,12 +11,7 @@ class LinkedList:
     def __init__(self, head=None): # переменная аргумент head - экземпляр класса Node
         self.head = head 
         
-#     def display(self):
-#         current = self.head
-#         while current is not None:
-#             print(current.data, end=" ")
-#             current = current.next
-#         print()        
+       
 
 def IsCycle(l): # будет возвращено Bool значение 
     
