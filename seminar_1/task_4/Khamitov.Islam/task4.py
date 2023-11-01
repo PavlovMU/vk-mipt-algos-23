@@ -7,8 +7,7 @@ def find2IndexesOfSum(a , s):
     first = 0
     
     while last != first:
-        if a[first] + a[last] == s:
-            
+        if a[first] + a[last] == s:            
             return (first, last)
         
         elif a[first] + a[last] > s:
