@@ -19,4 +19,3 @@ $ git commit -m "Решил первую задачу"
 $ git push origin ivanov.ivan
 
 4. Убедившись что всё верно оформляете pull request. Инструкция как это сделать будет в выводе команды git push.
-
