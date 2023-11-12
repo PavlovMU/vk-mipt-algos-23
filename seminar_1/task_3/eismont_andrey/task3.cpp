@@ -59,51 +59,6 @@ void pop_back(List listok) {
   }
 }
 
-/*
-void erase(List listok, size_t n) {
-  if (listok.size == 0) {
-    return;
-  }
-  if (n == 0) {
-    delete listok.Head;
-    listok.Head == nullptr;
-    --listok.size;
-  } else {
-    Node* prev_current = listok.Head;
-    Node* current = listok.Head;
-    for (size_t i = 1; i < n - 1; ++i) {
-      ++prev_current;
-    }
-    ++(current = prev_current);
-    prev_current->next = current->next;
-    delete current;
-    --listok.size;
-  }
-}
-*/
-
-/*void reverse(List* listok) {
-  if (listok->Head == nullptr) {
-    return;
-  } else if (listok->Head->next == nullptr) {
-    return;
-  }
-  Node* prev_current = listok->Head;
-  Node* current = listok->Head->next;
-  Node* next_current = current->next;
-  prev_current->next = nullptr;
-  while (next_current != nullptr) {
-    current->next = prev_current;
-    prev_current = current;
-    current = next_current;
-    next_current = next_current->next;
-  }
-  current->next = prev_current;
-  listok->Tail = listok->Head;
-  listok->Head = current;
-}
-*/
-
 bool is_the_cycle(List* listok) {
   if (listok->Head == nullptr) {
     return false;
@@ -125,15 +80,16 @@ bool is_the_cycle(List* listok) {
 }
 
 int main() {
+  // для введения тестов
+  /*
   List listok;
 
   push_back(0, &listok);
   push_back(1, &listok);
   push_back(2, &listok);
   push_back(3, &listok);
-  // listok.Tail->next = listok.Head->next->next;
 
   std::cout << "Is_the_cycle: " << is_the_cycle(&listok) << "\n";
-
+  */
   return 0;
 }

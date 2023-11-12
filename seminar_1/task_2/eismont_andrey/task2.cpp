@@ -56,29 +56,6 @@ void pop_back(List listok) {
   }
 }
 
-/*
-void erase(List listok, size_t n) {
-  if (listok.size == 0) {
-    return;
-  }
-  if (n == 0) {
-    delete listok.Head;
-    listok.Head == nullptr;
-    --listok.size;
-  } else {
-    Node* prev_current = listok.Head;
-    Node* current = listok.Head;
-    for (size_t i = 1; i < n - 1; ++i) {
-      ++prev_current;
-    }
-    ++(current = prev_current);
-    prev_current->next = current->next;
-    delete current;
-    --listok.size;
-  }
-}
-*/
-
 void reverse(List* listok) {
   if (listok->Head == nullptr) {
     return;
@@ -100,29 +77,9 @@ void reverse(List* listok) {
   listok->Head = current;
 }
 
-/*
-bool is_the_cycle(List listok) {
-  if (listok.Head == nullptr) {
-    return false;
-  }
-  Node* slow = listok.Head;
-  Node* fast = listok.Head->next;
-  while (fast != nullptr && fast != slow) {
-    fast = fast->next;
-    slow = slow->next;
-    if (fast != nullptr && fast != slow) {
-      fast = fast->next;
-    }
-  }
-  if (fast == nullptr) {
-    return false;
-  } else {
-    return true;
-  }
-}
-*/
-
 int main() {
+  // для введения тестов
+  /*
   List listok;
 
   push_back(0, &listok);
@@ -135,6 +92,6 @@ int main() {
     std::cout << "Head: " << listok.Head->value << "\n";
     std::cout << "Tail: " << listok.Tail->value << "\n";
   }
-
+  */
   return 0;
 }

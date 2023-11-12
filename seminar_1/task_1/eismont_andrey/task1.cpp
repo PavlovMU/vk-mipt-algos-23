@@ -55,29 +55,6 @@ void pop_back(List listok) {
   }
 }
 
-/*
-void erase_n(List* listok, size_t n) {
-  if (listok->size == 0) {
-    return;
-  }
-  if (n == 0) {
-    delete listok->Head;
-    listok->Head == nullptr;
-    --listok->size;
-  } else {
-    Node* prev_current = listok->Head;
-    Node* current = listok->Head;
-    for (size_t i = 1; i < n - 1; ++i) {
-      ++prev_current;
-    }
-    ++(current = prev_current);
-    prev_current->next = current->next;
-    delete current;
-    --listok->size;
-  }
-}
-*/
-
 void erase_value(List* listok, int value) {
   if (listok->size == 0) {
     return;
@@ -105,76 +82,9 @@ void erase_value(List* listok, int value) {
   }
 }
 
-/*
-void erase_n(List* listok, size_t n) {
-  if (listok->size == 0) {
-    return;
-  }
-  if (n == 0) {
-    delete listok->Head;
-    listok->Head == nullptr;
-    --listok->size;
-  } else {
-    Node* prev_current = listok->Head;
-    Node* current = listok->Head;
-    for (size_t i = 1; i < n - 1; ++i) {
-      ++prev_current;
-    }
-    ++(current = prev_current);
-    prev_current->next = current->next;
-    delete current;
-    --listok->size;
-  }
-}
-*/
-
-/*
-void reverse(List* listok) {
-  if (listok->Head == nullptr) {
-    return;
-  } else if (listok->Head->next == nullptr) {
-    return;
-  }
-  Node* prev_current = listok->Head;
-  Node* current = listok->Head->next;
-  Node* next_current = current->next;
-  prev_current->next = nullptr;
-  while (next_current != nullptr) {
-    current->next = prev_current;
-    prev_current = current;
-    current = next_current;
-    next_current = next_current->next;
-  }
-  current->next = prev_current;
-  listok->Tail = listok->Head;
-  listok->Head = current;
-}
-*/
-
-/*
-bool is_the_cycle(List listok) {
-  if (listok.Head == nullptr) {
-    return false;
-  }
-  Node* slow = listok.Head;
-  Node* fast = listok.Head->next;
-  while (fast != nullptr && fast != slow) {
-    fast = fast->next;
-    slow = slow->next;
-    if (fast != nullptr && fast != slow) {
-      fast = fast->next;
-    }
-  }
-  if (fast == nullptr) {
-    return false;
-  } else {
-    return true;
-  }
-}
-*/
-
 int main() {
-  List listok;
+  // для введения тестов
+  /*List listok;
   int value = 0;
   std::cin >> value;
 
@@ -199,6 +109,6 @@ int main() {
     std::cout << current->value << " ";
   }
   std::cout << "\n";
-
+  */
   return 0;
 }
