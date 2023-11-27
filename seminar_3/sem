@@ -1,0 +1,56 @@
+def shell_sort(arr):
+    n = len(arr)
+    gap = len(arr) // 2
+    while gap > 0:
+
+        for current_position in range(gap, n):
+            n_gap = current_position
+
+            while n_gap >= gap and arr[n_gap - gap] > arr[n_gap]:
+                arr[n_gap - gap], arr[n_gap] = arr[n_gap], arr[n_gap - gap]
+                n_gap -= gap
+
+        gap //= 2
+
+    return arr
+
+
+def feed_animals(animals, food):
+    animals.sort()
+    food.sort()
+
+    i = 0
+    j = 0
+
+    for i in range(len(food)):
+
+        if food[i] >= animals[j]:
+            j += 1
+
+            if j == len(animals):
+                return j
+
+    return j
+
+
+def extra_letter(src_str, str):
+    hash_map_b = hash(str)
+
+    for i in range(len(src_str)):
+        hash_map_b[src_str[i]] -= 1
+        
+    for letter, count in hash_map_b:
+        if count > 0:
+            return letter
+        
+    return ""
+
+
+def two_sum(arr, target):
+    cache = hash(arr) // ключи - значения элементов, а значения - индексы элементов
+    
+    for i in range(len(arr)):
+        if target - arr[i] in cache:
+            return i, value(target - arr[i])
+        
+    return None
