@@ -9,39 +9,31 @@ struct Node {
 };
 
 Node* removeValue(Node * head, int value){
-    Node* dummy;
+    Node* dummy = new Node();  
     dummy->next = head;
 
     Node * prev = dummy;
     Node * curr = head;
-    Node * next = nullptr;
+
     while (curr != nullptr)
     {
-        if (head->data == value) {
-            Node* newHead = head->next;
-            delete head;
-            dummy->next = newHead;
-            return newHead->next;
-        }
-
-        if(curr->data == value)
+        if (curr->data == value)
         {
             prev->next = curr->next;
             delete curr;
             curr = prev->next;
-        }    
-        else
-        {
-            prev = curr;
-            curr = curr->next;
+            continue;  
         }
 
-        return dummy->next;    
+        prev = curr;
+        curr = curr->next;
     }
-    
 
-
+    Node* newHead = dummy->next;
+    delete dummy;  
+    return newHead;
 }
+
 
 void printList(Node* head) {
     while (head != nullptr) {
