@@ -39,28 +39,28 @@ public:
         }
     }
 
-    void dfs(int *visited, const int &current = 0) {
-        visited[current] = 1;
+    void dfs(int *visited, const int &color = 1, const int &current = 0) {
+        visited[current] = color;
         for (int j = 0; j < numberNodes; j++) {
             if (matrix[current][j] == 1 && visited[j] == 0) {
-                dfs(visited, j);
+                dfs(visited, color, j);
             }
         }
     }
 
-    int find_connected_components() {
-        int res = 0;
+    std::pair<int, int *> find_connected_components() {
+        int col = 1;
         int *vis = new int[numberNodes];
         for (int i = 0; i < numberNodes; i++) {
             vis[i] = 0;
         }
         for (int i = 0; i < numberNodes; i++) {
             if (vis[i] == 0) {
-                dfs(vis, i);
-                res++;
+                dfs(vis, col, i);
+                col++;
             }
         }
-        return res;
+        return std::make_pair(col - 1, vis);
     }
 
     Graph(const int &num) {
@@ -83,6 +83,13 @@ int main() {
     n = stoi(in);
     Graph g1(n);
     g1.enter();
-    std::cout << g1.find_connected_components();
+    std::cout << g1.find_connected_components().first << std::endl;
+    for (int i = 0; i < n; i++) {
+        std::cout << i + 1 << '\t';
+    }
+    std::cout << std::endl;
+    for (int i = 0; i < n; i++) {
+        std::cout << g1.find_connected_components().second[i] << '\t';
+    }
     return 0;
 }
